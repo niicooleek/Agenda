@@ -9,3 +9,8 @@ var contactos = [
     telefono: "5555555555" }
 ];
 
+
+function mostrarForm(){
+    document.getElementById("modal").classList.toggle("forma");
+}
+

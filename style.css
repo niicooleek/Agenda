@@ -131,6 +131,10 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
+.forma{
+  display: block;
+}
+
 .modal-bg {
   position: absolute;
   width: 100%;
