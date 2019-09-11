@@ -23,12 +23,13 @@ function añadirArreglo(){
 
 }
 
-function añadirContacto(contacto){
+function añadirContacto(contacto, index){
   var lista = document.getElementById("contactos");
+  lista.innerHTML = "";
     lista.insertAdjacentHTML('beforeend',
     `<li class="contacto">
     <div class="actions">
-      <a><i  class="fa fa-trash"></i></a>
+      <a><i  class="fa fa-trash" onclick="eliminarContacto(` + index + `)"></i></a>
     </div>
     <i class="userIcon fa fa-user"></i>
     <h4 class="nombre">` + contacto.nombre + `</h4>
@@ -48,7 +49,12 @@ function añadirContacto(contacto){
     </div>
   </li>`
     );
-   
+   imprimirContactos();
+}
+
+function eliminarContacto(index){
+  contactos.splice(index, 1);
+  imprimirContactos();
 }
 
 function imprimirContactos(){
