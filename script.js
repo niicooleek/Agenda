@@ -23,4 +23,36 @@ function añadirArreglo(){
 
 }
 
-//function añadir
+function añadirContacto(contacto){
+  var lista = document.getElementById("contactos");
+    lista.insertAdjacentHTML('beforeend',
+    `<li class="contacto">
+    <div class="actions">
+      <a><i  class="fa fa-trash"></i></a>
+    </div>
+    <i class="userIcon fa fa-user"></i>
+    <h4 class="nombre">` + contacto.nombre + `</h4>
+    <div class="datos">
+      <div class="dato">
+        <i class="fa fa-building"></i>
+        <span>` + contacto.empresa + `</span>
+      </div>
+      <div class="dato">
+        <i class="fa fa-envelope"></i>
+        <a>` + contacto.email + `</a>
+      </div>
+      <div class="dato">
+        <i class="fa fa-phone"></i>
+        <a>` + contacto.telefono + `</a>
+      </div>
+    </div>
+  </li>`
+    );
+   
+}
+
+function imprimirContactos(){
+  contactos.forEach(añadirContacto);
+}
+
+imprimirContactos();
