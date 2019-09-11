@@ -15,10 +15,12 @@ function mostrarForm(){
 }
 
 function añadirArreglo(){
-  var nombre = document.getElementById("nombre");
-  var empresa = document.getElementById("empresa");
-  var email = document.getElementById("email");
-  var telefono = document.getElementById("telefono");
-  contactos.push({ 'nombre': nombre.value, 'empresa': empresa.value, 'email': email.value, 'telefono': telefono.value});
+  var nombre = document.getElementById("nombre").value;
+  var empresa = document.getElementById("empresa").value;
+  var email = document.getElementById("email").value;
+  var telefono = document.getElementById("telefono").value;
+  contactos.push({ 'nombre': nombre, 'empresa': empresa, 'email': email, 'telefono': telefono});
 
 }
+
+//function añadir
