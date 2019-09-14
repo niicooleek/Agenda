@@ -20,7 +20,7 @@ function añadirArreglo(){
   var email = document.getElementById("email").value;
   var telefono = document.getElementById("telefono").value;
 
-  document.getElementById("modal").classList.toggle("forma");
+  mostrarForm();
   contactos.push({ 'nombre': nombre, 'empresa': empresa, 'email': email, 'telefono': telefono});
   imprimirContactos();
   
