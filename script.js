@@ -11,6 +11,11 @@ var contactos = [
 
 
 function mostrarForm(){
+document.getElementById("nombre").value == "";
+document.getElementById("empresa").value == "";
+document.getElementById("email").value == "";
+document.getElementById("telefono").value == "";
+
 document.getElementById("modal").classList.toggle("forma");
 }
 
@@ -53,13 +58,11 @@ function validarTodo(){
  var lista = document.getElementById("errores");
 lista.innerHTML="";
  if(!nombre){
-    document.getElementById("nombre").style.borderColor="#CC0000";
     lista.insertAdjacentHTML('beforeend',
     `<li> Se requiere un nombre </li>`);
  }
 
  if(!email){
-    document.getElementById("email").style.borderColor="#CC0000";
     lista.insertAdjacentHTML('beforeend',
     `<li> Se requiere un email </li>`);
  }
