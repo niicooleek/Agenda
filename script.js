@@ -11,18 +11,61 @@ var contactos = [
 
 
 function mostrarForm(){
-    document.getElementById("modal").classList.toggle("forma");
+document.getElementById("modal").classList.toggle("forma");
 }
 
 function añadirArreglo(){
-  document.getElementById("modal").classList.toggle("forma");
   var nombre = document.getElementById("nombre").value;
   var empresa = document.getElementById("empresa").value;
   var email = document.getElementById("email").value;
   var telefono = document.getElementById("telefono").value;
+
+  document.getElementById("modal").classList.toggle("forma");
   contactos.push({ 'nombre': nombre, 'empresa': empresa, 'email': email, 'telefono': telefono});
   imprimirContactos();
   
+}
+
+function validarNombre(){
+  var nombre = document.getElementById("nombre").value;
+
+  if (nombre == ""){
+    return false;
+  }else{
+    return true;
+  }
+
+}
+
+function validarEmail(){
+  var email = document.getElementById("email").value;
+if (email == ""){
+    return false;
+  }else{
+    return true;
+  }
+
+}
+
+function validarTodo(){
+ var nombre = validarNombre();
+ var email = validarEmail();
+ var lista = document.getElementById("errores");
+lista.innerHTML="";
+ if(!nombre){
+    document.getElementById("nombre").style.borderColor="#CC0000";
+    lista.insertAdjacentHTML('beforeend',
+    `<li> Se requiere un nombre </li>`);
+ }
+
+ if(!email){
+    document.getElementById("email").style.borderColor="#CC0000";
+    lista.insertAdjacentHTML('beforeend',
+    `<li> Se requiere un email </li>`);
+ }
+   if(nombre && email){
+    añadirArreglo();
+  }
 }
 
 function añadirContacto(contacto, index){
@@ -52,7 +95,7 @@ function añadirContacto(contacto, index){
     </div>
   </li>`
     );
-  
+
    //imprimirContactos();
 }
 
