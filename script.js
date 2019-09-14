@@ -15,17 +15,20 @@ function mostrarForm(){
 }
 
 function añadirArreglo(){
+  document.getElementById("modal").classList.toggle("forma");
   var nombre = document.getElementById("nombre").value;
   var empresa = document.getElementById("empresa").value;
   var email = document.getElementById("email").value;
   var telefono = document.getElementById("telefono").value;
   contactos.push({ 'nombre': nombre, 'empresa': empresa, 'email': email, 'telefono': telefono});
-  document.getElementById("modal").classList.toggle("forma");
+  imprimirContactos();
+  
 }
 
 function añadirContacto(contacto, index){
   var lista = document.getElementById("contactos");
-  lista.innerHTML = "";
+
+  lista.setAttribute("class", "contactos");
     lista.insertAdjacentHTML('beforeend',
     `<li class="contacto">
     <div class="actions">
@@ -40,16 +43,16 @@ function añadirContacto(contacto, index){
       </div>
       <div class="dato">
         <i class="fa fa-envelope"></i>
-        <a>` + contacto.email + `</a>
+        <a href="` + contacto.email + `">` + contacto.email + `</a>
       </div>
       <div class="dato">
         <i class="fa fa-phone"></i>
-        <a>` + contacto.telefono + `</a>
+        <a href="` + contacto.telefono + `">` + contacto.telefono + `</a>
       </div>
     </div>
   </li>`
     );
-    
+  
    //imprimirContactos();
 }
 
@@ -59,7 +62,10 @@ function eliminarContacto(index){
 }
 
 function imprimirContactos(){
+  var lista = document.getElementById("contactos");
+  lista.innerHTML = "";
   contactos.forEach(añadirContacto);
+
 }
 
 imprimirContactos();
