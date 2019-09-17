@@ -11,10 +11,10 @@ var contactos = [
 
 
 function mostrarForm(){
-document.getElementById("nombre").value == "";
-document.getElementById("empresa").value == "";
-document.getElementById("email").value == "";
-document.getElementById("telefono").value == "";
+document.getElementById("nombre").value = "";
+document.getElementById("empresa").value = "";
+document.getElementById("email").value = "";
+document.getElementById("telefono").value = "";
 
 document.getElementById("modal").classList.toggle("forma");
 }
